@@ -1,7 +1,6 @@
 import React from "react";
-import Movies from "./pages/Movies";
+import Game from "./pages/Game";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Details from "./pages/Details";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 
@@ -10,9 +9,8 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Movies} />
-          <Route exact path="/movies" component={Movies} />
-          <Route exact path="/movies/:id" component={Details} />
+          <Route exact path="/" component={Game} />
+          <Route exact path="/movies" component={Game} />
           <Route component={NoMatch} />
         </Switch>
         <Nav />

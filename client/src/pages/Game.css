@@ -1,0 +1,20 @@
+.card {
+    border: 1px solid #576490;
+    height: 220px;
+    margin: 10px;
+  }
+
+  .card:hover {
+      box-shadow: 0 6px 12px #576490, 0 6px 12px rgba(0,0,0,0.23);
+  }
+
+  .card:active {
+    box-shadow: 0px 0px 0px 5px #576490; 
+  }
+  
+  .cardImage {
+    width: 160px;
+    height: 215px;
+    padding-top: 5px;
+    pointer-events: none;
+  }
