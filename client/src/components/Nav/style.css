@@ -1,0 +1,35 @@
+.Navbar {
+    background-color: 	#576490;
+    line-height: 15px;
+    text-shadow: 3px 3px 6px #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2147483647;
+}
+
+.response {
+    color: white !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+
+.brand {
+    color: #D1D2F9 !important;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    font-size: 25px;
+}
+
+.score {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+}
+
+.number {
+    color: #fff !important;
+    font-size: 22px;
+}

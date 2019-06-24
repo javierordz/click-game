@@ -1,20 +1,17 @@
 import React from "react";
-import Game from "./pages/Game";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import GameBoard from "./pages/GameBoard";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Game} />
-          <Route exact path="/movies" component={Game} />
+    <div>
+        <Switch >
+          <Route exact path="/" component={GameBoard} />
           <Route component={NoMatch} />
         </Switch>
-        <Nav />
-      </div>
+    </div>
     </Router>
   );
 }

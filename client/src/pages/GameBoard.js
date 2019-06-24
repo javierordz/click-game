@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import Nav from "../components/Nav";
-import API from "../utils/API";
 import "./GameBoard.css";
 
 let moviesList = [{id: "shawshankRedemption", thumbnail: "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", clicked: false},
@@ -23,7 +22,7 @@ let topScore = 0;
 let strikes = 0;
 let msg = "";
 
-class Game extends Component {
+class GameBoard extends Component {
   state = {
     cards: moviesList,
     strikes: 0,
@@ -49,11 +48,11 @@ class Game extends Component {
           if (strikes < 2) {
             strikes++;
             let test = parseInt(3 - strikes);
-            msg = "Incorrect Guess: you have " + test + " tries left";
+            msg = "SORRY, " + test + " tries left...";
           } else {
             strikes = 0;
             score = 0;
-            msg = "Game Over: click to try again"
+            msg = "GAME OVER. Click again!"
             moviesList.map( (cards) => {
               cards.clicked = false;
             })
@@ -62,7 +61,7 @@ class Game extends Component {
         cards.clicked = true;
         score++;
         (topScore < score) ? (topScore = score) : (topScore = topScore);
-        msg = "You Guessed Correctly";
+        msg = "CORRECT!";
         }
       }
     })
@@ -85,9 +84,8 @@ class Game extends Component {
       <Nav msg = {this.state.msg}
           score = {this.state.score}
           topScore = {this.state.topScore} />
-      <Jumbotron backgroundImage = "https://images.wallpaperscraft.com/image/landscape_blue_tree_black_92069_1920x1080.jpg">
-      <h1 className="title">Movie Clicking Game</h1>
-      <p className="description">Click a fresh card for points. Click the same card twice and lose the game.</p>
+      <Jumbotron>
+        <p className="description">Click fresh movies and earn points! Click on one twice and lose a chance...</p>
       </Jumbotron>
       <div className="container">
         <div className="row">
@@ -132,4 +130,4 @@ class Game extends Component {
     );
 }
 }
-export default Game;
+export default GameBoard;
